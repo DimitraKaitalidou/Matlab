@@ -28,7 +28,7 @@ else
    end 
 end </code></pre>
 
-Specifically, H<sub>t</sub> is the homeostatic pressure, H<sub>0</sub><sup>+</sup> is the upper threshold of homeostatic pressure, H<sub>0</sub><sup>-</sup> is the lower threshold of homeostatic pressure, H<sub>0</sub> is the initial homeostatic pressure depending on the starting state and C<sub>t</sub> is a periodic function of the circadian process (simple or complex form depending on user input). The values of the rest of the parameters can be found [here](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0103877#s1).
+Specifically, H<sub>t</sub> is the homeostatic pressure, H<sub>0</sub><sup>+</sup> is the upper threshold of homeostatic pressure, H<sub>0</sub><sup>-</sup> is the lower threshold of homeostatic pressure, H<sub>0</sub> is the initial homeostatic pressure depending on the initial state and C<sub>t</sub> is a periodic function of the circadian process (simple or complex form depending on user input). Details on the algorithm and the values can found [here](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0103877#s1).
 
 # References
 1. Mathematical Models for Sleep-Wake Dynamics: Comparison of the Two-Process Model and a Mutual Inhibition Neuronal Model
