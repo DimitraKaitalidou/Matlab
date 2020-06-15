@@ -58,12 +58,12 @@ end
 
 % Print results
 figure;
-plot(time, H0_ut + a * C(time), 'LineWidth', 1, 'Color', [0.780392169952393 0.95686274766922 0.39215686917305])
+plot(time, H0_ut + a * C(time), 'LineWidth', 1, 'Color', [0 0 1])
 title({'Sleep-wake cycles -', circadian_process_function_str, 'Mean Value of Homeostatic Pressure = ' H0_ut});
 hold on 
-plot(time, H0_lt + a * C(time), 'LineWidth', 1, 'Color', [0.30588236451149 0.803921580314636 0.768627464771271])
+plot(time, H0_lt + a * C(time), 'LineWidth', 1, 'Color', [0 1 0])
 hold on 
-plot(time, H, 'LineWidth', 1, 'Color', [0.749019622802734 0 0.749019622802734])
+plot(time, H, 'LineWidth', 1, 'Color', [1 0 0])
 legend ('Upper Asymptote of Homeostatic Pressure', 'Lower Asymptote of Homeostatic Pressure', 'Homeostatic Pressure');
 
 end
