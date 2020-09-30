@@ -24,7 +24,7 @@ for j = 2:r_pad - 1
                 total2 = total2 + input_pad(j + h, i + g) * gy(h + 2, g + 2);
             end
         end
-        input_prewitt(j,i) = sqrt(total1 * total1 + total2 * total2);
+        input_prewitt(j, i) = sqrt(total1 * total1 + total2 * total2);
         total1 = 0;
         total2 = 0;
     end 
