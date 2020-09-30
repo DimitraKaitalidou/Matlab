@@ -13,17 +13,17 @@ clear all
 % Read all input images
 fnames = dir('*.img');
 number_of_images = length(fnames);
-for i=1:number_of_images
-    [ avw, machine ] = avw_img_read(fnames(i).name, '', 'ieee-be');
+for i = 1:number_of_images
+    [avw, machine] = avw_img_read(fnames(i).name, '', 'ieee-be');
     img = avw.img;
     img1 = img(64, :, :);
     if(i == 1)
         im1 = flipud(permute(img1, [3, 2, 1]));
         [rows, cols] = size(im1);
         im = zeros(number_of_images, rows, cols);
-        im(i,:,:) = flipud(permute(img1, [3, 2, 1]));
+        im(i, :, :) = flipud(permute(img1, [3, 2, 1]));
     else
-        im(i,:,:) = flipud(permute(img1, [3, 2, 1]));
+        im(i, :, :) = flipud(permute(img1, [3, 2, 1]));
     end
 end
 
