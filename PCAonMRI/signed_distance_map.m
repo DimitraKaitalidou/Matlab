@@ -1,4 +1,4 @@
-function [ dist ] = signed_distance_map( input )
+function[dist ] = signed_distance_map(input)
 % Copyright 2019, Dimitra S. Kaitalidou, All rights reserved
 % This function computes the signed distance map from an input image. The
 % function sets to 0 the pixels on the object's boundary, to negative
@@ -30,7 +30,7 @@ min = 0;
 % Find and store the indices of the perimeters
 for i = 1:r
     for j = 1:c
-        if(BW_perim(i, j)==1)
+        if(BW_perim(i, j) == 1)
             p = p + 1;
             x(p) = i;
             y(p) = j;
@@ -43,7 +43,7 @@ end
 % to positive euclidean distance value the pixels outside the perimeter.
 for i = 1:r
     for j = 1:c
-        if(BW_perim(i, j)==1)
+        if(BW_perim(i, j) == 1)
             dist(i, j) = 0;
         else
             if(BW_perim(i, j) == 0) && (BW(i, j) == 0)
