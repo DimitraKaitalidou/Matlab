@@ -8,11 +8,11 @@ clear all
 
 % Read and convert the input values
 num_of_hours_input = inputdlg('Give the number of hours.');
-num_of_hours = str2num(num_of_hours_input{1,1});
+num_of_hours = str2num(num_of_hours_input{1, 1});
 initial_state_input = inputdlg('Give the initial state: 0 for awake, 1 for asleep.');
-initial_state = str2num(initial_state_input{1,1});
+initial_state = str2num(initial_state_input{1, 1});
 circadian_function_input = inputdlg('Give the type of circadian function: 0 for simple, 1 for complex.');
-circadian_function = str2num(circadian_function_input{1,1});
+circadian_function = str2num(circadian_function_input{1, 1});
 
 % Apply the Two-Process Model of Sleep
 if (initial_state == 0 || initial_state == 1) && (circadian_function == 0 || circadian_function == 1)
