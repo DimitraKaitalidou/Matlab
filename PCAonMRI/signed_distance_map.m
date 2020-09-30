@@ -1,4 +1,4 @@
-function[dist ] = signed_distance_map(input)
+function[dist] = signed_distance_map(input)
 % Copyright 2019, Dimitra S. Kaitalidou, All rights reserved
 % This function computes the signed distance map from an input image. The
 % function sets to 0 the pixels on the object's boundary, to negative
@@ -9,9 +9,9 @@ function[dist ] = signed_distance_map(input)
 % indicates all the pixels on and inside the boundary (value 1) and the
 % BW_perim indicates all the pixels on the boundary only (value 1).
 % Therefore when:
-% a) BW_perim(i,j)==1 is on the boundary
-% b) BW_perim(i,j)==0 && BW(i,j)==0 the pixel is outside the boundary
-% c) BW_perim(i,j)==0 && BW(i,j)==1 the pixel is inside the boundary
+% a) BW_perim(i,j) == 1 is on the boundary
+% b) BW_perim(i,j) == 0 && BW(i,j) == 0 the pixel is outside the boundary
+% c) BW_perim(i,j) == 0 && BW(i,j) == 1 the pixel is inside the boundary
 
 % Produce the binary image where only the hippocampus is kept
 input_norm = input / 512;
