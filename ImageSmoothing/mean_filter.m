@@ -5,7 +5,6 @@ function[output] = mean_filter(input, size_of_filter)
 
 % Initialize matrices and variables
 [r, c] = size(input);
-output = zeros(r, c);
 r_pad = r + 2 * (size_of_filter - 1) / 2;
 c_pad = c + 2 * (size_of_filter - 1) / 2;
 input_mean = zeros(r_pad, c_pad);
