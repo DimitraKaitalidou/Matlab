@@ -42,7 +42,7 @@ f_type_2 = 'high';
 [N_2, z_2, p_2, k_2, sos_2, g_2] = butterworh_filter(2, sampling_freq, Fp_2, Fs_2, Rp_2, Rs_2, f_type_2);
 
 ecg_t_2 = filtfilt(sos_2, g_2, ecg_norm_t_1);
-ecg_norm_t_2 = normalize_signal(ecg_t_2);
+ecg_norm_t_2 = ecg_t_2 / max(abs(ecg_t_2));
 [f, ecg_norm_f_2, NFFT] = DFT(sampling_freq, ecg_norm_t_2);
 
 figure
@@ -83,7 +83,7 @@ f_type_3 = 'stop';
 [N_3, z_3, p_3, k_3, sos_3, g_3] = butterworh_filter(3, sampling_freq, Fp_3, Fs_3, Rp_3, Rs_3, f_type_3);
 
 ecg_t_3 = filtfilt(sos_3, g_3, ecg_norm_t_1);
-ecg_norm_t_3 = normalize_signal(ecg_t_3);
+ecg_norm_t_3 = ecg_t_3 / max(abs(ecg_t_3));
 [f, ecg_norm_f_3, NFFT] = DFT(sampling_freq, ecg_norm_t_3);
 
 figure
@@ -126,7 +126,7 @@ Rs_4_1 = 40; %dB
 f_type_4_1 = 'low';
 [N_4_1, z_4_1, p_4_1, k_4_1, sos_4_1, g_4_1] = butterworh_filter(4.1, sampling_freq, fp_4_1, fs_4_1, Rp_4_1, Rs_4_1, f_type_4_1);
 ecg_t_4_1 = filtfilt(sos_4_1, g_4_1, ecg_norm_t_1);
-ecg_norm_t_4_1 = normalize_signal(ecg_t_4_1);
+ecg_norm_t_4_1 = ecg_t_4_1 / max(abs(ecg_t_4_1));
 [f, ecg_norm_f_4_1, NFFT] = DFT(sampling_freq, ecg_norm_t_4_1);
 
 figure
@@ -156,7 +156,7 @@ Rs_4_2 = 40;%dB
 f_type_4_2 = 'low';
 [N_4_2, z_4_2, p_4_2, k_4_2, sos_4_2, g_4_2] = butterworh_filter(4.2, sampling_freq, fp_4_2, fs_4_2, Rp_4_2, Rs_4_2, f_type_4_2);
 ecg_t_4_2 = filtfilt(sos_4_2, g_4_2, ecg_norm_t_1);
-ecg_norm_t_4_2 = normalize_signal(ecg_t_4_2);
+ecg_norm_t_4_2 = ecg_t_4_2 / max(abs(ecg_t_4_2));
 [f, ecg_norm_f_4_2, NFFT] = DFT(sampling_freq, ecg_norm_t_4_2);
 
 figure
@@ -186,7 +186,7 @@ Rs_4_3 = 40;%dB
 f_type_4_3 = 'low';
 [N_4_3, z_4_3, p_4_3, k_4_3, sos_4_3, g_4_3] = butterworh_filter(4.3, sampling_freq, fp_4_3, fs_4_3, Rp_4_3, Rs_4_3, f_type_4_3);
 ecg_t_4_3 = filtfilt(sos_4_3, g_4_3, ecg_norm_t_1);
-ecg_norm_t_4_3 = normalize_signal(ecg_t_4_3);
+ecg_norm_t_4_3 = ecg_t_4_3 / max(abs(ecg_t_4_3));
 [f, ecg_norm_f_4_3, NFFT] = DFT(sampling_freq, ecg_norm_t_4_3);
 
 figure
@@ -216,7 +216,7 @@ Rs_4_4 = 40; %dB
 f_type_4_4= 'low';
 [N_4_4, z_4_4, p_4_4, k_4_4, sos_4_4, g_4_4] = butterworh_filter(4.4, sampling_freq, fp_4_4, fs_4_4, Rp_4_4, Rs_4_4, f_type_4_4);
 ecg_t_4_4 = filtfilt(sos_4_4, g_4_4, ecg_norm_t_1);
-ecg_norm_t_4_4 = normalize_signal(ecg_t_4_4);
+ecg_norm_t_4_4 = ecg_t_4_4 / max(abs(ecg_t_4_4));
 [f, ecg_norm_f_4_4, NFFT] = DFT(sampling_freq, ecg_norm_t_4_4);
 
 figure
@@ -246,7 +246,7 @@ Rs_4_5 = 60; %dB
 f_type_4_5= 'low';
 [N_4_5, z_4_5, p_4_5, k_4_5, sos_4_5, g_4_5] = butterworh_filter(4.5, sampling_freq, fp_4_5, fs_4_5, Rp_4_5, Rs_4_5, f_type_4_5);
 ecg_t_4_5 = filtfilt(sos_4_5, g_4_5, ecg_norm_t_1);
-ecg_norm_t_4_5 = normalize_signal(ecg_t_4_5);
+ecg_norm_t_4_5 = ecg_t_4_5 / max(abs(ecg_t_4_5));
 [f, ecg_norm_f_4_5, NFFT] = DFT(sampling_freq, ecg_norm_t_4_5);
 
 figure
@@ -298,9 +298,9 @@ axis tight
 % PART 5: Final ECG
 
 ecg_norm_t_5 = filtfilt(sos_3, g_3, ecg_norm_t_2);
-ecg_norm_t_5 = normalize_signal(ecg_norm_t_5);
+ecg_norm_t_5 = ecg_norm_t_5 / max(abs(ecg_norm_t_5));
 ecg_norm_t_5 = filtfilt(sos_4_4, g_4_4, ecg_norm_t_5);
-ecg_norm_t_5 = normalize_signal(ecg_norm_t_5);
+ecg_norm_t_5 = ecg_norm_t_5 / max(abs(ecg_norm_t_5));
 [f, ecg_norm_f_5, NFFT] = DFT(sampling_freq, ecg_norm_t_5);
 
 figure
