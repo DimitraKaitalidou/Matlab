@@ -1,7 +1,7 @@
-function [ output ] = prewitt_filter( input )
-%   Copyright 2019, Dimitra S. Kaitalidou, All rights reserved
-%   The function applies the prewitt filter on the inserted
-%   matrix.
+function[output] = prewitt_filter(input)
+% Copyright 2019, Dimitra S. Kaitalidou, All rights reserved
+% The function applies the prewitt filter on the inserted
+% matrix.
 
 % Initialize matrices and variables
 [r, c] = size(input);
