@@ -2,7 +2,7 @@
 This is an implementation of Principal Component Analysis (PCA) applied on a set of brain MRI images that depict the hippocampus of a brain. The goal is to extract the primary modes of variance of the shape distribution of the hippocampus, where each mode captures characteristics being learned. The method is inspired by [1]. The original MRI images can be downloaded for free from [2] and the preprocessed MRI images that contain the hippocampus segmentation can be requested as described in [3].
 
 ## Principal Components Analysis
-PCA is a linear method for dimensionality reduction. The method is described in detail [4], while the steps can be summed up as follows:
+PCA is a linear method for dimensionality reduction. The method is described in detail in [4], while the steps can be summed up as follows:
 - Subtract the mean from the input data
 - Calculate the covariance matrix
 - Calculate the eigenvectors and eigenvalues of the covariance matrix
